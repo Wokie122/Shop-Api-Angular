@@ -1,0 +1,26 @@
+<div class="container">
+  <h4 class="mb-3">Logowanie:</h4>
+  <div class="row">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <div class="col-md-8 order-md-1">
+        <div class="row">
+          <div class="mb-3">
+            <label>Login: </label>
+            <input [(ngModel)]="login.login" name="login" required>
+          </div>
+          <div>
+            <label>Hasło: </label>
+            <input [(ngModel)]="login.haslo" name="haslo" required type="password">
+          </div>
+          <div>
+            <input type="submit" value="Zaloguj" [disabled]="form.invalid">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div appCzerwonyTekst>
+  {{blad}}
+</div>

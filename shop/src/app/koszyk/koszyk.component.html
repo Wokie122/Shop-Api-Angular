@@ -1,0 +1,13 @@
+<h5 class="d-flex justify-content-between align-items-center mb-3">Koszyk ({{licznik}} produkt(ów))</h5>
+<div class="list-group mb-3" *ngFor="let artykul of koszyk">
+  <li class="list-group-item d-flex justify-content-between 1h-condensed">
+    <div>
+      <h6 class="my-0">{{artykul.nazwa}}</h6>
+      <small class="text-muted">{{artykul.opis}}</small>
+    </div>
+    <span class="text-muted">{{artykul.cena}}</span>
+  </li>
+</div>
+<div class="d-flex justify-content-center m-3">
+  <button *ngIf="licznik > 0" (click)="wyczyscKoszyk()" class="btn btn-danger">Wyczyść koszyk</button>
+</div>

@@ -1,0 +1,28 @@
+<h4>Artykuły</h4>
+
+<div class="d-flex flex-wrap justify-content-between align-items-center">
+  <div class="list-group col-md-6" *ngFor="let artykul of artykuly">
+    <li class="list-group-item d-flex justify-content-between 1h-condensed">
+      <div>
+        <h6 class="my-0">{{artykul.nazwa}}</h6>
+        <small class="text-muted">ID: {{artykul.id}}</small>
+        <br>
+        <small class="text-muted">{{artykul.nazwa}}</small>
+        <br>
+        <small class="text-muted">{{artykul.cena}} PLN</small>
+      </div>
+      <span class="text-muted">{{artykul.opis}}</span>
+    </li>
+    <button (click)="dodajDoKoszyka(artykul)" class="btn btn-block btn-outline-primary">Dodaj do koszyka</button>
+    <button (click)="przejdzDoEdycji()" class="btn btn-block btn-outline-primary"><a [routerLink]="artykul.id">Przejdź
+      do edycji</a></button>
+  </div>
+  <button (click)="przejdzDoEdycji()" class="btn btn-block btn-outline-primary">
+    <a routerLink="nowy">Dodaj nowy artykuł</a>
+  </button>
+  <div>
+    <label>Strona</label> <input type="number" [(ngModel)]="stronnicowanie.strona">
+    <label>Ilość</label> <input type="number" [(ngModel)]="stronnicowanie.ilosc">
+    <button class="btn btn-block btn-outline-secondary" (click)="odswiez()">Przejdź</button>
+  </div>
+</div>

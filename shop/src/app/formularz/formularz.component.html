@@ -1,0 +1,29 @@
+<div class="container">
+  <h4 class="mb-3">Dodawanie produktu:</h4>
+  <div class="row">
+    <form class="needs-validation" novalidate *ngIf="form != null" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="col-md-8 order-md-1">
+        <div class="row">
+          <div class="mb-3">
+            <label for="nazwa">nazwa:</label>
+            <input class="form-control" id="nazwa" name="nazwa" formControlName="nazwa" required minlength="2"
+                   maxlength="100">
+          </div>
+          <div class="mb-3">
+            <label for="cena">cena:</label>
+            <input class="form-control" id="cena" name="cena" formControlName="cena" type="number" required
+                   minlength="0" maxlength="1000">
+          </div>
+          <div class="mb-3">
+            <label for="opis">opis:</label>
+            <input class="form-control" id="opis" name="opis" formControlName="opis" required maxlength="300">
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-danger" type="reset">Wyczysc</button>
+        <button class="btn btn-primary" [disabled]="form.invalid">Zatwierdz</button>
+      </div>
+    </form>
+  </div>
+</div>

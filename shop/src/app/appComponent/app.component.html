@@ -1,0 +1,16 @@
+<header>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <button class="btn btn-block btn-outline-secondary" *appAutoryzacja (click)="powrot()">Strona główna</button>
+    </div>
+    <div appCzerwonyTekst class="container d-flex justify-content-between">
+      <button class="btn btn-block btn-outline-secondary" *appAutoryzacja (click)="wyloguj()">Wyloguj</button>
+    </div>
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center" style="font-size: xx-large;">
+        <strong>Sklep</strong>
+      </a>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</header>
